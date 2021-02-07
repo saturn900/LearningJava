@@ -1,4 +1,19 @@
-project(':common') {
-    apply plugin: 'javaaaa'
+subprojects{
+    apply plugin: 'java'
 }
 
+
+project(':common') {
+}
+
+project(':server-core') {
+}
+
+project(':server-ui') {
+}
+
+project(':tracker-core') {
+}
+
+project(':tracker-ui') {
+}
