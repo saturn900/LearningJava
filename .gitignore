@@ -1,6 +1,6 @@
 **/*.iml
 **/.*
 !/.gitignore
-/gradlew
+.gradle
 /gradlew.bat
 

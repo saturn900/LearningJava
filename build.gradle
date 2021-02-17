@@ -6,6 +6,8 @@ subprojects{
     }
 
     dependencies {
+        // https://mvnrepository.com/artifact/org.springframework/spring-context
+        compile group: 'org.springframework', name: 'spring-context', version: '4.3.7.RELEASE'
         testCompile group: 'junit', name: 'junit', version: '4.12'
     }
 }
@@ -22,6 +24,7 @@ project(':server-core') {
     }
 }
 
+
 project(':server-ui') {
     dependencies {
         compile project(':common')
@@ -30,9 +33,10 @@ project(':server-ui') {
 
 project(':tracker-core') {
     apply plugin: 'java-library-distribution'
+    
     dependencies {
         compile project(':common')
-    }
+    } 
 }
 
 project(':tracker-ui') {
