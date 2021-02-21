@@ -11,8 +11,9 @@ import org.springframework.stereotype.Service;
 public class ScheduledService {
 
 
+    private int count;
 
-    @Scheduled (fixedDelay = 3000)
+    @Scheduled (fixedDelay = 3000, initialDelay = 5000)
     private void tick() {
         System.out.println("ScheduledService.tick");
     }
