@@ -47,3 +47,6 @@ project(':tracker-ui') {
     project(':schedulinng') {
     }
 }
+
+project(':properties') {
+}
