@@ -1,21 +1,41 @@
 package jdev.services;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 
-import javax.annotation.PostConstruct;
+import java.util.concurrent.BlockingDeque;
+import java.util.concurrent.LinkedBlockingDeque;
 
-/**
- * Created by jdev on 26.03.2017.
- */
 @Service
 public class DataPeekService {
 
-    @Autowired
-    private jdev.services.DataSendService dataSendService;
+    private static final Logger log = LoggerFactory.getLogger(DataPeekService.class);
 
-    @PostConstruct
-    private void init() {
-        dataSendService.callFromInit();
+    private BlockingDeque<String> queue =  new LinkedBlockingDeque<>(100);
+    private int putCount;
+    private long previous;
+
+
+    @Autowired
+    private DataSendService dataSendService;
+
+    //@PostConstruct
+    //private void init() {dataSendService.callFromInit();
+    //}
+
+
+
+    @Scheduled (fixedDelay = 1_000)
+    void put() throws InterruptedException {
+        int i = putCount++;
+        log.info("ScheduledQueueService.put " + i);
+        queue.put("new string => " + i);
+        //System.out.println(nameFac);
+        //init();
+
     }
+
 }
