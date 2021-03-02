@@ -17,14 +17,13 @@ public class DataPeekService {
     private BlockingDeque<String> queue =  new LinkedBlockingDeque<>(100);
     private int putCount;
     private long previous;
-
+    private String tryz;
 
     @Autowired
     private DataSendService dataSendService;
 
     //@PostConstruct
-    //private void init() {dataSendService.callFromInit();
-    //}
+    //private void init() throws InterruptedException {dataSendService.take(); }
 
 
 
@@ -35,7 +34,9 @@ public class DataPeekService {
         queue.put("new string => " + i);
         //System.out.println(nameFac);
         //init();
-
     }
-
+    public String ask(){
+        tryz = ("шляпа");
+        return tryz;
+    }
 }

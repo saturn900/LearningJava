@@ -2,6 +2,7 @@ package jdev.services;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 
@@ -16,6 +17,13 @@ public class DataSendService {
     private BlockingDeque<String> queue = new LinkedBlockingDeque<>(100);
     private int putCount;
     private long previous;
+
+    @Autowired
+    private DataPeekService dataPeekService;
+
+//    @PostConstruct
+ //   private void ask() {
+ //       dataPeekService.ask(); }
 
     // public void callFromInit() {
     //   System.out.println("шляпа");
