@@ -7,7 +7,6 @@ import org.springframework.stereotype.Service;
 
 import java.util.concurrent.BlockingDeque;
 import java.util.concurrent.LinkedBlockingDeque;
-import java.util.concurrent.TimeUnit;
 
 /**
  * Created by jdev on 26.03.2017.
@@ -17,7 +16,6 @@ public class ScheduledQueueService {
 
     private static final Logger log = LoggerFactory.getLogger(ScheduledQueueService.class);
 
-
     private BlockingDeque<String> queue =  new LinkedBlockingDeque<>(100);
     private int putCount;
     private long previous;
@@ -26,8 +24,8 @@ public class ScheduledQueueService {
     void take() throws InterruptedException {
         log.info("take trying!!!");
         long current = System.currentTimeMillis();
-        log.info((current - previous) + " ScheduledQueueService.take " + queue.poll(500, TimeUnit.MILLISECONDS));
-//        System.out.println((current - previous) + " ScheduledQueueService.take " + queue.take());
+//        log.info((current - previous) + " ScheduledQueueService.take " + queue.poll(500, TimeUnit.MILLISECONDS));
+        System.out.println((current - previous) + " ScheduledQueueService.take " + queue.take());
         previous = current;
 
     }
