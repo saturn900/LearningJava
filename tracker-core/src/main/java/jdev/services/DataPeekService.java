@@ -1,6 +1,7 @@
 package jdev.services;
 
 //import org.springframework.beans.factory.annotation.Autowired;
+import com.sun.xml.internal.bind.v2.runtime.Coordinator;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.scheduling.annotation.Scheduled;
@@ -40,6 +41,7 @@ public class DataPeekService {
         log.info( String.valueOf("Долгота -" + longitude) );
         log.info( String.valueOf("Азимут -" + azimuth) );
         log.info( String.valueOf("Скорость -" + speed) );
+//        queue.put(coord); coord - класс с полями  latitude longitude azimuth speed
         queue.put(latitude);
         queue.put(longitude);
         queue.put(azimuth);
@@ -47,4 +49,7 @@ public class DataPeekService {
 
     }
 
+    public Coord getCoord() {
+        return queue.take();
+    }
 }

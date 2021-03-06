@@ -33,11 +33,8 @@ public class DataSendService {
     void take() throws InterruptedException {
         int i = putCount++;
         log.info("take trying!!!");
-        long current = System.currentTimeMillis();
-        //log.info((current - previous) + " ScheduledQueueService.take " + queue.poll(500, TimeUnit.MILLISECONDS));
-        System.out.println((current - previous) + " ScheduledQueueService.take " + queue.take());
-        previous = current;
-
+        Coord coord = dataPeekService.getCoord();
+        // далее посылаем coord на сервер
     }
 
 }
