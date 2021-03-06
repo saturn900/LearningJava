@@ -40,6 +40,7 @@ public class DataPeekService {
         log.info( String.valueOf("Долгота -" + longitude) );
         log.info( String.valueOf("Азимут -" + azimuth) );
         log.info( String.valueOf("Скорость -" + speed) );
+//        queue.put(coord); coord - класс с полями  latitude longitude azimuth speed
         queue.put(latitude);
         queue.put(longitude);
         queue.put(azimuth);
@@ -47,4 +48,7 @@ public class DataPeekService {
 
     }
 
+    public Coord getCoord() {
+        return queue.take();
+    }
 }
