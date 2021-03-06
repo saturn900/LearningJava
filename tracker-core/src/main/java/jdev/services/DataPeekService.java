@@ -1,7 +1,6 @@
 package jdev.services;
 
 //import org.springframework.beans.factory.annotation.Autowired;
-import com.sun.xml.internal.bind.v2.runtime.Coordinator;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.scheduling.annotation.Scheduled;
