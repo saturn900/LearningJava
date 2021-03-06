@@ -12,9 +12,9 @@ import java.util.concurrent.LinkedBlockingDeque;
 @Service
 public class DataPeekService {
 
-    private static final Logger log = LoggerFactory.getLogger(DataPeekService.class);
+    private static final Logger log = LoggerFactory.getLogger( DataPeekService.class );
 
-    private BlockingDeque<Object> queue =  new LinkedBlockingDeque<Object>(100);
+    private BlockingDeque<Object> queue = new LinkedBlockingDeque<Object>( 100 );
     private int putCount;
     private long previous;
     private Object Coordinats;
@@ -28,8 +28,7 @@ public class DataPeekService {
     //}
 
 
-
-    @Scheduled (fixedDelay = 1_000)
+    @Scheduled(fixedDelay = 1_000)
     void put() throws InterruptedException {
         int i = putCount++;
         /*log.info( String.valueOf("Широта -" + latitude) );
@@ -41,5 +40,9 @@ public class DataPeekService {
         queue.put(longitude);
         queue.put(azimuth);
         queue.put(speed);*/
-        queue.put(Coordinats);
+        Coordinats coordinats = new Coordinats(  );
+        queue.put( coordinats );
+        System.out.println( coordinats );
     }
+
+ }
