@@ -17,7 +17,7 @@ public class DataPeekService {
     private BlockingDeque<Object> queue = new LinkedBlockingDeque<Object>( 100 );
     private int putCount;
     private long previous;
-    private Object Coordinats;
+//    private Object Coordinats;
 
 
 //    @Autowired
