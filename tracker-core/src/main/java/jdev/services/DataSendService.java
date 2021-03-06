@@ -11,7 +11,7 @@ import java.util.concurrent.LinkedBlockingDeque;
 
 
 @Service
-public class DataSendService {
+public class DataSendService extends DataPeekService {
     private static final Logger log = LoggerFactory.getLogger(DataPeekService.class);
 
     private BlockingDeque<String> queue = new LinkedBlockingDeque<>(100);
@@ -32,9 +32,7 @@ public class DataSendService {
     @Scheduled(fixedDelay = 1_000)
     void take() throws InterruptedException {
         int i = putCount++;
-        log.info("take trying!!!");
-        Coord coord = dataPeekService.getCoord();
-        // далее посылаем coord на сервер
+        log.info("take ting!!ai
     }
 
 }
