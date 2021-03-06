@@ -32,7 +32,10 @@ public class DataSendService extends DataPeekService {
     @Scheduled(fixedDelay = 1_000)
     void take() throws InterruptedException {
         int i = putCount++;
-        log.info("take ting!!ai
+        log.info("take ting!!ai");
+        Coordinats coordinats = new Coordinats();
+        System.out.println( "Данные :" );
+        log.info("Какие то цифры: " + queue.take());
     }
 
 }
