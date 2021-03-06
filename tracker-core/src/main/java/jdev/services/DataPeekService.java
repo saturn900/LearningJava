@@ -14,14 +14,10 @@ public class DataPeekService {
 
     private static final Logger log = LoggerFactory.getLogger(DataPeekService.class);
 
-    private BlockingDeque<Integer> queue =  new LinkedBlockingDeque<Integer>(100);
+    private BlockingDeque<Object> queue =  new LinkedBlockingDeque<Object>(100);
     private int putCount;
     private long previous;
-    public int latitude = 10;
-    public int longitude = 10;
-    public int azimuth = 20;
-    public int speed = 30;
-
+    private Object Coordinats;
 
 
 //    @Autowired
@@ -36,15 +32,21 @@ public class DataPeekService {
     @Scheduled (fixedDelay = 1_000)
     void put() throws InterruptedException {
         int i = putCount++;
-        log.info( String.valueOf("Широта -" + latitude) );
+        /*log.info( String.valueOf("Широта -" + latitude) );
         log.info( String.valueOf("Долгота -" + longitude) );
         log.info( String.valueOf("Азимут -" + azimuth) );
         log.info( String.valueOf("Скорость -" + speed) );
         queue.put(latitude);
         queue.put(longitude);
         queue.put(azimuth);
-        queue.put(speed);
-
+        queue.put(speed);*/
+        queue.put(Coordinats);
     }
 
+    protected jdev.services.Coordinats getCoordinats() {
+        return null;
+    }
+   /* public Coordinats getCoordinats(){
+        return Coordinats();
+    }*/
 }
