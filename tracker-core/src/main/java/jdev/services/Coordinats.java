@@ -6,11 +6,12 @@ public class Coordinats extends DataPeekService {
     public int azimuth;
     public int speed;
 
-    public Coordinats(){
+    public int сoordinats(){
         this.latitude = 10;
         this.longitude = 20;
         this.azimuth = 30;
         this.speed = 40;
+        return сoordinats();
     }
 
 }
