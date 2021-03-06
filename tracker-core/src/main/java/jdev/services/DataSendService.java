@@ -32,10 +32,7 @@ public class DataSendService extends DataPeekService {
     @Scheduled(fixedDelay = 1_000)
     void take() throws InterruptedException {
         int i = putCount++;
-        log.info("take trying!!!");
-        Coordinats coordinats = dataPeekService.getCoordinats();
-        System.out.println(Coordinats);
-
+        log.info("take ting!!ai
     }
 
 }
