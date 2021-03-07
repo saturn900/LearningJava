@@ -18,8 +18,7 @@ public class DataSendService extends DataPeekService {
     @Scheduled(fixedDelay = 2_000)
     void take() throws InterruptedException {
         System.out.println( "Данные :" );
-        log.info("  Широта = " + queue.take() + "  Долгота = " + queue.take());
-        log.info("  Азимут = " + queue.take() + "  Скорость = " + queue.take());
+        log.info("  Широта = " + queue.take() + "  Долгота = " + queue.take() + "  Азимут = " + queue.take() + "  Скорость = " + queue.take());
     }
 
 }
