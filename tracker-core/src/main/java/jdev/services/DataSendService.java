@@ -33,7 +33,8 @@ public class DataSendService {
     void take() throws InterruptedException {
         int i = putCount++;
         log.info("take trying!!!");
-        Coord coord = dataPeekService.getCoord();
+        Integer coord = dataPeekService.getCoord();
+        System.out.println("received: " + coord);
         // далее посылаем coord на сервер
     }
 

@@ -48,7 +48,7 @@ public class DataPeekService {
 
     }
 
-    public Coord getCoord() {
+    public Integer getCoord() throws InterruptedException {
         return queue.take();
     }
 }
