@@ -10,11 +10,11 @@ import java.util.concurrent.BlockingDeque;
 import java.util.concurrent.LinkedBlockingDeque;
 
 @Service
-public class DataPeekService {
+public class DataPeekService  {
 
     private static final Logger log = LoggerFactory.getLogger( DataPeekService.class );
 
-    private BlockingDeque<Object> queue = new LinkedBlockingDeque<Object>( 100 );
+    public BlockingDeque<Object> queue = new LinkedBlockingDeque<Object>( 100 );
     private int putCount;
     private long previous;
 //    private Object Coordinats;
@@ -30,8 +30,9 @@ public class DataPeekService {
 
     @Scheduled(fixedDelay = 1_000)
     void put() throws InterruptedException {
-        int i = putCount++;
-        /*log.info( String.valueOf("Широта -" + latitude) );
+        int i = 5;
+        int a = 10;
+/*        log.info( String.valueOf("Широта -" + latitude) );
         log.info( String.valueOf("Долгота -" + longitude) );
         log.info( String.valueOf("Азимут -" + azimuth) );
         log.info( String.valueOf("Скорость -" + speed) );
@@ -40,9 +41,15 @@ public class DataPeekService {
         queue.put(longitude);
         queue.put(azimuth);
         queue.put(speed);*/
-        Coordinats coordinats = new Coordinats(  );
-        queue.put( coordinats );
-        System.out.println( coordinats );
+        //Coordinats coordinats = new Coordinats();
+        queue.put( i);
+        queue.put( a);
+
+ //       log.info( String.valueOf( new Coordinats() ) );
+      //  System.out.println( coordinats );
     }
 
- }
+ //   protected Object getCoordinats() throws InterruptedException {
+ //       return queue.take();
+ //   }
+}

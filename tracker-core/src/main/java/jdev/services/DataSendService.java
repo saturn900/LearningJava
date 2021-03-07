@@ -6,15 +6,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 
-import java.util.concurrent.BlockingDeque;
-import java.util.concurrent.LinkedBlockingDeque;
-
 
 @Service
 public class DataSendService extends DataPeekService {
     private static final Logger log = LoggerFactory.getLogger(DataPeekService.class);
 
-    private BlockingDeque<String> queue = new LinkedBlockingDeque<>(100);
+ //   private BlockingDeque<String> queue = new LinkedBlockingDeque<>(100);
     private int putCount;
     private long previous;
 
@@ -31,11 +28,12 @@ public class DataSendService extends DataPeekService {
 
     @Scheduled(fixedDelay = 1_000)
     void take() throws InterruptedException {
-        int i = putCount++;
-        log.info("take ting!!ai");
-        Coordinats coordinats = new Coordinats();
+       int speed = 0;
+        log.info("take tingai !!");
+        //Coordinats coordinats = dataPeekService.getCoordinats();
         System.out.println( "Данные :" );
-        log.info("Какие то цифры: " + queue.take());
+        System.out.println(" i = " + queue.take());
+        System.out.println(" a = " + queue.take());
     }
 
 }
