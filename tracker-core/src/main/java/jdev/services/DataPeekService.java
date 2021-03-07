@@ -1,6 +1,5 @@
 package jdev.services;
 
-//import org.springframework.beans.factory.annotation.Autowired;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.scheduling.annotation.Scheduled;
@@ -15,41 +14,15 @@ public class DataPeekService  {
     private static final Logger log = LoggerFactory.getLogger( DataPeekService.class );
 
     public BlockingDeque<Object> queue = new LinkedBlockingDeque<Object>( 100 );
-    private int putCount;
-    private long previous;
-//    private Object Coordinats;
-
-
-//    @Autowired
-//    private DataSendService dataSendService;
-
-    //@PostConstruct
-    //private void init() {dataSendService.callFromInit();
-    //}
-
 
     @Scheduled(fixedDelay = 1_000)
     void put() throws InterruptedException {
-        int i = 5;
-        int a = 10;
-/*        log.info( String.valueOf("Широта -" + latitude) );
-        log.info( String.valueOf("Долгота -" + longitude) );
-        log.info( String.valueOf("Азимут -" + azimuth) );
-        log.info( String.valueOf("Скорость -" + speed) );
-//        queue.put(coord); coord - класс с полями  latitude longitude azimuth speed
-        queue.put(latitude);
-        queue.put(longitude);
-        queue.put(azimuth);
-        queue.put(speed);*/
-        //Coordinats coordinats = new Coordinats();
-        queue.put( i);
-        queue.put( a);
+        Coordinats coordinats = new Coordinats();
+        queue.put( coordinats.getLatitude());
+        queue.put( coordinats.getLongitude());
+        queue.put( coordinats.getAzimuth());
+        queue.put( coordinats.getSpeed());
 
- //       log.info( String.valueOf( new Coordinats() ) );
-      //  System.out.println( coordinats );
-    }
+     }
 
- //   protected Object getCoordinats() throws InterruptedException {
- //       return queue.take();
- //   }
 }
