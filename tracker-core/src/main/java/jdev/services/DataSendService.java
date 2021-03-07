@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 
 
 @Service
-public class DataSendService extends DataPeekService {
+public class DataSendService {
     private static final Logger log = LoggerFactory.getLogger(DataPeekService.class);
 
  //   private BlockingDeque<String> queue = new LinkedBlockingDeque<>(100);
@@ -28,12 +28,4 @@ public class DataSendService extends DataPeekService {
 
     @Scheduled(fixedDelay = 1_000)
     void take() throws InterruptedException {
-       int speed = 0;
-        log.info("take tingai !!");
-        //Coordinats coordinats = dataPeekService.getCoordinats();
-        System.out.println( "Данные :" );
-        System.out.println(" i = " + queue.take());
-        System.out.println(" a = " + queue.take());
-    }
-
-}
+<<
