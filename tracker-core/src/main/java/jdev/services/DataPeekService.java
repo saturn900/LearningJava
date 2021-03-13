@@ -1,6 +1,7 @@
 package jdev.services;
 
 //import org.springframework.beans.factory.annotation.Autowired;
+import jdev.dto.PointDTO;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.scheduling.annotation.Scheduled;
@@ -17,11 +18,15 @@ public class DataPeekService  {
     public BlockingDeque<Object> queue = new LinkedBlockingDeque<Object>( 100 );
 
     @Scheduled(fixedDelay = 1_000)
-    void put() throws InterruptedException {
+    void put(PointDTO gps) throws InterruptedException {
         Coordinats coordinats = new Coordinats();
         queue.put( coordinats.getLatitude());
         queue.put( coordinats.getLongitude());
         queue.put( coordinats.getAzimuth());
         queue.put( coordinats.getSpeed());
+    }
+
+    public BlockingDeque<Object> getQueue() {
+        return queue;
     }
 }
