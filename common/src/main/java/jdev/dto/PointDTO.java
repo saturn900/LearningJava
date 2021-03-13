@@ -58,4 +58,10 @@ public class PointDTO {
     public long getTime() {
         return time;
     }
+
+    public void setAzim(int azimuth) {
+    }
+
+    public void setSpeed(int speed) {
+    }
 }
