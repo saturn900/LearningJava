@@ -1,8 +1,12 @@
 package jdev.services;
 
 import jdev.dto.PointDTO;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.scheduling.annotation.Scheduled;
 
-import org.springframework.stereotype.Service;
+import javax.annotation.PostConstruct;
+
+
 
 public class Coordinats {
     public int latitude = 10;
@@ -10,6 +14,14 @@ public class Coordinats {
     public int azimuth = 30;
     public int speed = 40;
 
+    @Autowired
+    private DataPeekService dataPeekService;
+
+    @PostConstruct
+    @Scheduled(cron = "${cron.prop}")
+    private void init() throws Exception{
+        dataPeekService.put();
+    }
 
     public PointDTO getGPS() throws Exception {
         PointDTO point = new PointDTO();

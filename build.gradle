@@ -102,8 +102,5 @@ project(':tracker-ui') {
 project(':properties') {
 }
 
-project(':queue-fixed-rate') {
-}
-
 project(':injection') {
 }

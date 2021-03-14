@@ -27,4 +27,8 @@ public class DataPeekService  {
     public Coordinats getCoor() throws InterruptedException {
         return queue.take();
     }
+
+    public BlockingDeque<Coordinats> getQueue() {
+        return queue;
+    }
 }
