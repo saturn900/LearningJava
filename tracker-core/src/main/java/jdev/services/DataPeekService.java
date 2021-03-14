@@ -15,11 +15,17 @@ public class DataPeekService  {
 
     public BlockingDeque<Coordinats> queue = new LinkedBlockingDeque<>( 100 );
 
+
+
+
     @Scheduled(fixedDelay = 1_000)
     void put() throws InterruptedException {
         Coordinats coordinats = new Coordinats();
         queue.put( coordinats);
+    }    public Coordinats getCoor() throws InterruptedException{
+        return queue.take();
     }
+
 
     public Coordinats getCoor() throws InterruptedException {
         return queue.take();

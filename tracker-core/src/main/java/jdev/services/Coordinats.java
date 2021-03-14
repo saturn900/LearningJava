@@ -1,6 +1,7 @@
 package jdev.services;
 
 import jdev.dto.PointDTO;
+
 import org.springframework.stereotype.Service;
 
 public class Coordinats {
@@ -18,7 +19,6 @@ public class Coordinats {
         point.setSpeed(this.speed);
         return point;
     }
-
 
     public int getLatitude() {
         return latitude;

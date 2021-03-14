@@ -8,7 +8,11 @@ import org.springframework.stereotype.Service;
 
 
 @Service
+
+public class DataSendService {
+
 public class DataSendService{
+
     private static final Logger log = LoggerFactory.getLogger(DataPeekService.class);
 
     @Autowired
