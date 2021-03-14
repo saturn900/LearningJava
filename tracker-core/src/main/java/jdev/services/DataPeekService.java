@@ -1,6 +1,5 @@
 package jdev.services;
 
-//import org.springframework.beans.factory.annotation.Autowired;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.scheduling.annotation.Scheduled;
@@ -18,14 +17,17 @@ public class DataPeekService  {
 
 
 
+
     @Scheduled(fixedDelay = 1_000)
     void put() throws InterruptedException {
         Coordinats coordinats = new Coordinats();
         queue.put( coordinats);
-    }
-
-    public Coordinats getCoor() throws InterruptedException{
+    }    public Coordinats getCoor() throws InterruptedException{
         return queue.take();
     }
 
+
+    public Coordinats getCoor() throws InterruptedException {
+        return queue.take();
+    }
 }

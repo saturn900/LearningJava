@@ -2,6 +2,8 @@ package jdev.services;
 
 import jdev.dto.PointDTO;
 
+import org.springframework.stereotype.Service;
+
 public class Coordinats {
     public int latitude = 10;
     public int longitude = 20;
