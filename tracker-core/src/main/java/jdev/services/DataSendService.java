@@ -33,7 +33,6 @@ public class DataSendService {
         int i=0;
         for (Coordinats point:dataPeekService.getQueue()) {
             restTemplate.postForObject("http://localhost:8080/points", point, PointDTO.class);
-            i++;
         }
     }
 
