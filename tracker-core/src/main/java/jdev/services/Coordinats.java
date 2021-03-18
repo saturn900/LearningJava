@@ -27,7 +27,7 @@ public class Coordinats {
         PointDTO point = new PointDTO();
         point.setLat(this.latitude);
         point.setLon(this.longitude);
-        point.setAzim(this.azimuth);
+        point.setAzimuth(this.azimuth);
         point.setSpeed(this.speed);
         return point;
     }
