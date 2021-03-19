@@ -5,7 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
-@ComponentScan({"hello","services","controllers"})
+@ComponentScan({"jd.rest.consume","controllers"})
 public class Main {
 
     public static void main(String[] args) {
