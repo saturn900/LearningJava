@@ -13,10 +13,10 @@ import org.springframework.web.client.RestTemplate;
 @PropertySource("classpath:/app.properties")
 @ComponentScan({"jdev.services"})
 @EnableScheduling
-public class Main {
+public class Application {
 
     public static void main(String[] args) {
-        SpringApplication.run( Main.class, args);
+        SpringApplication.run( Application.class, args);
     }
 
     @Bean
