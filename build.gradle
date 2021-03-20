@@ -92,11 +92,7 @@ project(':tracker-core') {
         compile project(':common')
         testCompile("org.springframework.boot:spring-boot-starter-test")
     }
-
-    jar {
-        baseName = 'gessing-boot'
-        version =  '0.1.0'
-    }
+    
     jar {
         baseName = 'gessing-boot'
         version =  '0.1.0'
