@@ -12,14 +12,14 @@ public class CyclicRestConsumer {
 
     public static void main(String... args) throws IOException, InterruptedException {
         while (true) {
-//            String response = IOUtils.toString(new URL("http://localhost:8080/counter?name=The+Who"), "UTF8");
-//            System.out.println(response);
-
-            String response = IOUtils.toString(new URL("http://localhost:8080/coords?location=lat56.4,lon34.6"), "UTF8");
+            String response = IOUtils.toString(new URL("http://localhost:8080/counter?name=The+Who"), "UTF8");
             System.out.println(response);
-//
-//            response = IOUtils.toString(new URL("http://localhost:8080/coords?location=lat56.4"), "UTF8");
-//            System.out.println(response);
+
+            response = IOUtils.toString(new URL("http://localhost:8080/coords?location=lat56.4,lon34.6"), "UTF8");
+            System.out.println(response);
+
+            response = IOUtils.toString(new URL("http://localhost:8080/coords?location=lat56.4"), "UTF8");
+            System.out.println(response);
 
             //неверный запрос будет отвергнут, отсутствует переменная location
             try {
