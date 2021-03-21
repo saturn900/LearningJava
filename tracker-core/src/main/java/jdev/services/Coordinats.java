@@ -3,11 +3,11 @@ package jdev.services;
 import jdev.dto.PointDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;
+import org.springframework.stereotype.Service;
 
 import javax.annotation.PostConstruct;
 
-
-
+@Service
 public class Coordinats {
     public int latitude = 10;
     public int longitude = 20;
@@ -15,22 +15,23 @@ public class Coordinats {
     public int speed = 40;
 
     @Autowired
-    private DataPeekService dataPeekService;
+    DataPeekService dataPeekService;
 
     @PostConstruct
     @Scheduled(cron = "${cron.prop}")
     private void init() throws Exception{
-        dataPeekService.put();
+        dataPeekService.put(getGPS());
     }
 
-    public PointDTO getCoor() throws Exception {
+    public PointDTO getGPS() throws Exception {
         PointDTO point = new PointDTO();
         point.setLat(this.latitude);
         point.setLon(this.longitude);
-        point.setAzimuth(this.azimuth);
+        point.setAzim(this.azimuth);
         point.setSpeed(this.speed);
         return point;
     }
+
 
     public int getLatitude() {
         return latitude;
@@ -64,8 +65,4 @@ public class Coordinats {
         this.speed = speed;
     }
 
-    @Override
-    public String toString() {
-        return String.join("; ", String.valueOf(latitude), String.valueOf(longitude), String.valueOf(azimuth), String.valueOf(speed));
-    }
 }
