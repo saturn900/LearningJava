@@ -6,18 +6,13 @@ import org.springframework.web.client.RestTemplate;
 
 public class DataSendService {
 
-    Object  i = 5;
-
-    @Autowired
-    DataPeekService dataPeekService;
-
     @Autowired
     RestTemplate restTemplate;
 
-    public void sendCoords(PointDTO point) throws Exception {
+    public void sendCoords(PointDTO point) {
         String url = "http://localhost:8080/coords";
         restTemplate = new RestTemplate();
         // отправка координат для POST-запросом
-        restTemplate.postForObject(url,point,Coordinats.class);
+        restTemplate.postForObject(url, point, PointDTO.class);
     }
 }
