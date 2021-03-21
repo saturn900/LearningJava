@@ -23,7 +23,7 @@ public class Coordinats {
         dataPeekService.put();
     }
 
-    public PointDTO getCoor() throws Exception {
+    public PointDTO getGPS() throws Exception {
         PointDTO point = new PointDTO();
         point.setLat(this.latitude);
         point.setLon(this.longitude);
