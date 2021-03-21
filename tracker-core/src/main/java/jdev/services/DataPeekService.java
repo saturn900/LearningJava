@@ -22,7 +22,10 @@ public class DataPeekService  {
     void put() throws InterruptedException {
         Coordinats coordinats = new Coordinats();
         queue.put( coordinats);
+    }    public Coordinats getCoor() throws InterruptedException{
+        return queue.take();
     }
+
 
     public Coordinats getCoor() throws InterruptedException {
         return queue.take();
