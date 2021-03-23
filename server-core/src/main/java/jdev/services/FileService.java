@@ -13,7 +13,7 @@ import java.io.IOException;
 @Service
 public class FileService {
 
-    public  Object DataGps;
+
     private File file = new File("server-core//src//main//resources//points.txt");
 
 
@@ -23,11 +23,12 @@ public class FileService {
     public int azimuth;
     public int speed;
 
-    public FileService(){
+    public FileService(int latitude,int longitude,int azimuth, int speed){
         this.latitude = latitude;
         this.longitude = longitude;
         this.azimuth = azimuth;
         this.speed = speed;
+
     }
 
 
