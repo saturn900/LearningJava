@@ -12,7 +12,7 @@ import org.springframework.web.client.RestTemplate;
 public class DataSendService{
     private static final Logger log = LoggerFactory.getLogger(DataPeekService.class);
 
-    Object Data;
+    Object DataGps;
 
     @Autowired
     private DataPeekService dataPeekService;
@@ -20,14 +20,20 @@ public class DataSendService{
     @Autowired
     public Coordinats coordinats;
 
+//    @Autowired
+//    public RestTemplate restTemplate;
+
+    RestTemplate restTemplate = new RestTemplate();
+
     @Scheduled(fixedDelay = 2_000)
     void take() throws InterruptedException {
         System.out.println( "Данные :" );
-        log.info("  Координаты = " + dataPeekService.getCoor());
-        Data = dataPeekService.getCoor();
-        RestTemplate restTemplate = new RestTemplate();
+//        log.info("  Координаты = " + dataPeekService.getCoor());
+        DataGps = dataPeekService.getCoor();
+        System.out.println( DataGps );
+
         // вот здесь создать RestTemplate и выполнить отправку
-        restTemplate.postForObject("http://localhost:8080/points", Data,DataSendService.class);
+        restTemplate.postForObject("http://localhost:8080", DataGps,DataSendService.class);
     }
 
 }
