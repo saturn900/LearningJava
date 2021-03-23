@@ -16,18 +16,22 @@ public class Controller {
     @Autowired
     FileService FileService;
 
-    @Autowired
-    DataSendService dataSendService;
+//    @Autowired
+//    DataSendService dataSendService;
 
 
     @RequestMapping(method = RequestMethod.POST)
     public @ResponseBody
-    DataSendService DataGps (@RequestBody DataSendService DataGps) { // выглядит нормально, надо только правильно прописать ComponentScan чтобы этот контроллер инициализировался
+    FileService DataGps (@RequestBody FileService DataGps) { // выглядит нормально, надо только правильно прописать ComponentScan чтобы этот контроллер инициализировался
         // прием выглядит нормально, должен принмиать, можно проверить утилитой curl, но можно и не проверять, а сразу из трекера кидать, или смотрите видео :)
         long current = System.currentTimeMillis();
-        logger.info((current - previous) + " lon = " + DataGps.longitude() + " lat = " + DataGps.latitude());
+        logger.info((current - previous) + " lon = " + DataGps.longitude + " lat = " + DataGps.latitude() + "azimuth" + DataGps.azimuth + "speed" + DataGps.azimuth);
 //        FileService.writeInFile((current - previous) +"AutoId" + DataGps.getAutoId() + " lon = " + DataGps.getLon() + " lat = " + DataGps.getLat());
         return DataGps;
+    }
+
+    private int longitude() {
+        return 0;
     }
 
     //можно добавить метод с аннотацией PostConstruct и в нем вывод в лог, чтобы проверить что данный контроллер инициализируется спрингом
