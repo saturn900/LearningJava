@@ -8,7 +8,7 @@ import org.springframework.context.annotation.ComponentScan;
  * Created by Егор on 25.11.2017.
  */
 @SpringBootApplication
-@ComponentScan({"jdev.server.services","jdev.server.controllers"}) // неверные имена пакетов, посмотрите где находится Controller ваш
+@ComponentScan({"jdev.services"}) // неверные имена пакетов, посмотрите где находится Controller ваш
 public class Main{
 
     public static void main(String[] args) {
