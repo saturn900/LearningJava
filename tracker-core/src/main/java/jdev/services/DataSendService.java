@@ -19,6 +19,7 @@ public class DataSendService{
     void take() throws InterruptedException {
         System.out.println( "Данные :" );
         log.info("  Координаты = " + dataPeekService.getCoor());
+        // вот здесь создать RestTemplate и выполнить отправку
     }
 
 }
