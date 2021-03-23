@@ -20,7 +20,7 @@ public class Controller {
 //    DataSendService dataSendService;
 
 
-    @RequestMapping(method = RequestMethod.POST)
+    @RequestMapping(value = "DataGps",method = RequestMethod.POST)
     public @ResponseBody
     FileService DataGps (@RequestBody FileService DataGps) { // выглядит нормально, надо только правильно прописать ComponentScan чтобы этот контроллер инициализировался
         // прием выглядит нормально, должен принмиать, можно проверить утилитой curl, но можно и не проверять, а сразу из трекера кидать, или смотрите видео :)

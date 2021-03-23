@@ -34,14 +34,7 @@ public class DataSendService{
         System.out.println( DataGps );
 
         // вот здесь создать RestTemplate и выполнить отправку
-        restTemplate.postForObject("http://localhost:8080/DataGps", DataGps,DataSendService.class);
+        restTemplate.postForObject("http://localhost:8080", DataGps,Object.class);
     }
 
-    public int latitude() {
-        return this.latitude;
-    }
-
-    public int longitude() {
-        return this.longitude();
-    }
 }
