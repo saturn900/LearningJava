@@ -17,14 +17,15 @@ public class Controller {
     @Autowired
     FileService FileService;
 
-    @RequestMapping(value = "points", method = RequestMethod.POST)
+    @RequestMapping(method = RequestMethod.POST)
     public @ResponseBody
-    PointDTO createPoint(@RequestBody PointDTO point) {
+    PointDTO createPoint(@RequestBody PointDTO point) { // выглядит нормально, надо только правильно прописать ComponentScan чтобы этот контроллер инициализировался
+        // прием выглядит нормально, должен принмиать, можно проверить утилитой curl, но можно и не проверять, а сразу из трекера кидать, или смотрите видео :)
         long current = System.currentTimeMillis();
-        //log.info((current - previous) + dataPeekService.take().toJson());
-        //previous = current;
         logger.info((current - previous) +"AutoId" + point.getAutoId() + " lon = " + point.getLon() + " lat = " + point.getLat());
         FileService.writeInFile((current - previous) +"AutoId" + point.getAutoId() + " lon = " + point.getLon() + " lat = " + point.getLat());
         return point;
     }
+
+    //можно добавить метод с аннотацией PostConstruct и в нем вывод в лог, чтобы проверить что данный контроллер инициализируется спрингом
 }
