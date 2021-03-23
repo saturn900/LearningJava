@@ -7,6 +7,8 @@ import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
+//import org.apache.commons.io.IOUtils;
+
 
 @Service
 public class DataSendService{
@@ -24,7 +26,6 @@ public class DataSendService{
 //    public RestTemplate restTemplate;
 
     RestTemplate restTemplate = new RestTemplate();
-    private int latitude;
 
     @Scheduled(fixedDelay = 2_000)
     void take() throws InterruptedException {
@@ -34,7 +35,9 @@ public class DataSendService{
         System.out.println( DataGps );
 
         // вот здесь создать RestTemplate и выполнить отправку
-        DataSendService dataSendService = restTemplate.postForObject("http://localhost:8080/DataGps", DataGps,DataSendService.class);
+
+        Coordinats coordinats = restTemplate.getForObject( "http://localhost:8080/DataGps", Coordinats.class);
+
     }
 
 }
