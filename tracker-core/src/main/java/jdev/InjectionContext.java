@@ -3,6 +3,7 @@ package jdev;
 import jdev.services.Coordinats;
 import jdev.services.DataPeekService;
 import jdev.services.DataSendService;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.scheduling.TaskScheduler;
@@ -12,6 +13,8 @@ import org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler;
 /**
  * Created by jdev on 26.03.2017.
  */
+
+@SpringBootApplication
 @Configuration
 @EnableScheduling
 public class InjectionContext {
