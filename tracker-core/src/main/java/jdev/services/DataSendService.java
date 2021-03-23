@@ -24,6 +24,7 @@ public class DataSendService{
 //    public RestTemplate restTemplate;
 
     RestTemplate restTemplate = new RestTemplate();
+    private int latitude;
 
     @Scheduled(fixedDelay = 2_000)
     void take() throws InterruptedException {
@@ -33,7 +34,14 @@ public class DataSendService{
         System.out.println( DataGps );
 
         // вот здесь создать RestTemplate и выполнить отправку
-        restTemplate.postForObject("http://localhost:8080", DataGps,DataSendService.class);
+        restTemplate.postForObject("http://localhost:8080/DataGps", DataGps,DataSendService.class);
     }
 
+    public int latitude() {
+        return this.latitude;
+    }
+
+    public int longitude() {
+        return this.longitude();
+    }
 }

@@ -1,6 +1,5 @@
 package jdev.services;
 
-import jdev.dto.PointDTO;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,14 +16,18 @@ public class Controller {
     @Autowired
     FileService FileService;
 
+    @Autowired
+    DataSendService dataSendService;
+
+
     @RequestMapping(method = RequestMethod.POST)
     public @ResponseBody
-    PointDTO createPoint(@RequestBody PointDTO point) { // выглядит нормально, надо только правильно прописать ComponentScan чтобы этот контроллер инициализировался
+    DataSendService DataGps (@RequestBody DataSendService DataGps) { // выглядит нормально, надо только правильно прописать ComponentScan чтобы этот контроллер инициализировался
         // прием выглядит нормально, должен принмиать, можно проверить утилитой curl, но можно и не проверять, а сразу из трекера кидать, или смотрите видео :)
         long current = System.currentTimeMillis();
-        logger.info((current - previous) +"AutoId" + point.getAutoId() + " lon = " + point.getLon() + " lat = " + point.getLat());
-        FileService.writeInFile((current - previous) +"AutoId" + point.getAutoId() + " lon = " + point.getLon() + " lat = " + point.getLat());
-        return point;
+        logger.info((current - previous) + " lon = " + DataGps.longitude() + " lat = " + DataGps.latitude());
+//        FileService.writeInFile((current - previous) +"AutoId" + DataGps.getAutoId() + " lon = " + DataGps.getLon() + " lat = " + DataGps.getLat());
+        return DataGps;
     }
 
     //можно добавить метод с аннотацией PostConstruct и в нем вывод в лог, чтобы проверить что данный контроллер инициализируется спрингом
