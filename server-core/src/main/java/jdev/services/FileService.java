@@ -12,7 +12,11 @@ import java.io.IOException;
 
 @Service
 public class FileService {
+
+    public  Object DataGps;
     private File file = new File("server-core//src//main//resources//points.txt");
+
+
 
     public int latitude;
     public int longitude;
@@ -25,6 +29,7 @@ public class FileService {
         this.azimuth = azimuth;
         this.speed = speed;
     }
+
 
     public int getLatitude() {
         return latitude;
@@ -57,7 +62,6 @@ public class FileService {
     public void setSpeed(int speed) {
         this.speed = speed;
     }
-
 
     public void writeInFile(String text) {
         try (BufferedWriter bw = new BufferedWriter(new FileWriter(file, false))) {
