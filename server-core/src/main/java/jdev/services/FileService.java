@@ -14,10 +14,17 @@ import java.io.IOException;
 public class FileService {
     private File file = new File("server-core//src//main//resources//points.txt");
 
-    public int latitude = 10;
-    public int longitude = 20;
-    public int azimuth = 30;
-    public int speed = 40;
+    public int latitude;
+    public int longitude;
+    public int azimuth;
+    public int speed;
+
+    public FileService(){
+        this.latitude = latitude;
+        this.longitude = longitude;
+        this.azimuth = azimuth;
+        this.speed = speed;
+    }
 
     public int getLatitude() {
         return latitude;

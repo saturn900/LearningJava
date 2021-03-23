@@ -30,9 +30,6 @@ public class Controller {
         return DataGps;
     }
 
-    private int longitude() {
-        return 0;
-    }
 
     //можно добавить метод с аннотацией PostConstruct и в нем вывод в лог, чтобы проверить что данный контроллер инициализируется спрингом
 }
