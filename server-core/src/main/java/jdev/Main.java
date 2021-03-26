@@ -8,9 +8,8 @@ import org.springframework.context.annotation.ComponentScan;
  * Created by Егор on 25.11.2017.
  */
 @SpringBootApplication
-@ComponentScan({"Controller","FileService","DataSendService"}) // неверные имена пакетов, посмотрите где находится Controller ваш
+@ComponentScan({"jdev.services"}) // неверные имена пакетов в которых уже спринг будет искать бины!!! были, теперь норм, запускабельно
 public class Main{
-
     public static void main(String[] args) {
         SpringApplication.run(Main.class, args);
     }

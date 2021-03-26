@@ -16,12 +16,14 @@ public class FileService {
 
     private File file = new File("server-core//src//main//resources//points.txt");
 
-
-
     public int latitude;
     public int longitude;
     public int azimuth;
     public int speed;
+
+
+    public FileService(){ // создан конструктор по умолчанию, так как спринг не может найти аргументы для конструктора с параметрами
+    }
 
     public FileService(int latitude,int longitude,int azimuth, int speed){
         this.latitude = latitude;
