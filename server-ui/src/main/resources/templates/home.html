@@ -6,7 +6,9 @@
 <body>
 <h1>Привет чувак! это страница home </h1>
 
-<p>Click <a th:href="@{/hello}">here</a>  там hello </p>
-<p>Click <a th:href="@{/admin}">here</a> if you are ADMIN.</p><p>Click <a th:href="@{/hello}">here</a> to see a greeting.</p>
+<p>Click <a th:href="@{/hello}">hello</a>  туда </p>
+<form th:action="@{/logout}" method="post">
+    <input type="submit" value="Sign Out"/>
+</form>
 </body>
 </html>
