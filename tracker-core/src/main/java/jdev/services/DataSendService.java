@@ -37,7 +37,7 @@ public class DataSendService{
         System.out.println( DataGps );
 
         // вот здесь создать RestTemplate и выполнить отправку
-        restTemplate.postForEntity("http://localhost:8080/DataGps", this.DataGps, Object.class);
+        restTemplate.postForEntity("http://localhost:8080/DataGps", DataGps, Object.class);
     }
 
 
