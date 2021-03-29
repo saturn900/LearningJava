@@ -39,7 +39,7 @@ public class Coordinats {
         return azimuth;
     }
 
-    public void setAzimuth(int azimuth) {
+    public void setAzim(int azimuth) {
         this.azimuth = azimuth;
     }
 

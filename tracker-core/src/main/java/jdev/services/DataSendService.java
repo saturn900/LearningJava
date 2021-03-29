@@ -30,7 +30,7 @@ public class DataSendService{
     RestTemplate restTemplate = new RestTemplate();
 
     @Scheduled(fixedDelay = 2_000)
-    void take() throws InterruptedException {
+    Coordinats take() throws InterruptedException {
         System.out.println( "Данные :" );
 //        log.info("  Координаты = " + dataPeekService.getCoor());
         DataGps = dataPeekService.getCoor();
@@ -38,6 +38,7 @@ public class DataSendService{
 
         // вот здесь создать RestTemplate и выполнить отправку
         restTemplate.postForEntity("http://localhost:8080/DataGps", DataGps, Object.class);
+        return coordinats;
     }
 
 
