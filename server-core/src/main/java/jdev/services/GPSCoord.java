@@ -1,12 +1,10 @@
 package jdev.services;
 
-import javax.persistence.Column;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 import static javax.persistence.GenerationType.AUTO;
 
+@Entity
 
 @Table(name="GPSCoord")
 public class GPSCoord {
