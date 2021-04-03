@@ -1,15 +1,23 @@
 package jdev.services;
 
+import jdev.repo.GPSCoordRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.web.bind.annotation.*;
 
 /**
  * Created by Егор on 25.11.2017.
  */
+
+@SpringBootApplication
+@EnableJpaRepositories("jdev.repo")
+@EntityScan(basePackageClasses = jdev.services.GPSCoord.class)
 @RestController
 public class Controller {
     Logger logger = LoggerFactory.getLogger(Controller.class);
@@ -18,8 +26,9 @@ public class Controller {
     @Autowired
     FileService FileService;
 
-//    @Autowired
-//    DataSendService dataSendService;
+
+    @Autowired
+    GPSCoordRepository gpsCoordRepository;
 
 
     @RequestMapping(value = "DataGps",method = RequestMethod.POST)
