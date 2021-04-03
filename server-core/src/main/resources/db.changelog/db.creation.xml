@@ -5,11 +5,7 @@
     <changeSet id="db.creation" author="jdev">
         <sql>
 
-            CREATE TABLE ROCKETS
-            (
-                ID integer AUTO_INCREMENT PRIMARY KEY,
-                MODEL varchar(32)
-            )
+
 
         </sql>
     </changeSet>

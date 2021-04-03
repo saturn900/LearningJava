@@ -15,21 +15,21 @@ public class GPSCoord {
     int id;
 
     @Column(name = "latitude")
-    String model1;
+    String latitude;
 
     @Column(name = "longitude")
-    String model2;
+    String longitude;
 
     @Column(name = "azimuth")
-    String model3;
+    String azimuth;
 
     @Column(name = "speed")
-    String model4;
+    String speed;
 
 
     public String toString() {
-        return "GPSCoord{ id=" + id + ", model1=" + model1 + ", model2=" + model2
-                + ", model3=" + model3 + ", model4=" + model4 + " }";
+        return "GPSCoord{ id=" + id + ", model1=" + latitude + ", model2=" + longitude
+                + ", model3=" + azimuth + ", model4=" + speed + " }";
     }
 
     public int getId() {
@@ -40,36 +40,36 @@ public class GPSCoord {
         this.id = id;
     }
 
-    public String getModel() {
-        return model1;
+    public String getLatitude() {
+        return latitude;
     }
 
-    public void setModel(String model1) {
-        this.model1 = model1;
+    public void setLatitude(String latitude) {
+        this.latitude = latitude;
     }
 
-    public String getModel2() {
-        return model2;
+    public String getLongitude() {
+        return longitude;
     }
 
-    public void setModel2(String model2) {
-        this.model2 = model2;
+    public void setLongitude(String longitude) {
+        this.longitude = longitude;
     }
 
     public String getModel3() {
-        return model3;
+        return azimuth;
     }
 
     public void setModel3(String model3) {
-        this.model3 = model3;
+        this.azimuth = azimuth;
     }
 
     public String getModel44() {
-        return model4;
+        return azimuth;
     }
 
     public void setModel4(String model4) {
-        this.model4 = model4;
+        this.azimuth = azimuth;
     }
 
 

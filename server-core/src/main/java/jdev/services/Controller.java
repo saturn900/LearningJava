@@ -1,6 +1,6 @@
 package jdev.services;
 
-import jdev.dao.GPSCoord;
+import jdev.dao.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,7 +15,7 @@ import java.util.List;
  * Created by Егор on 25.11.2017.
  */
 @EnableJpaRepositories("jdev.*")
-@EntityScan(basePackageClasses = jdev.dao.GPSCoord.class)
+@EntityScan(basePackageClasses = GPSCoord.class)
 @SpringBootApplication
 @RestController
 public class Controller  {
