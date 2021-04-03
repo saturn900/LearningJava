@@ -62,6 +62,7 @@ project(':server-core') {
     jar {
         baseName = 'server-core-boot'
         baseName = 'jpa-boot'
+        baseName = 'gessing-boot'
         version =  '0.1.0'
     }
 }
