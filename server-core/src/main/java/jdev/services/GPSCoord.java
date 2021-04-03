@@ -1,7 +1,9 @@
-package jdev.dao;
+package jdev.services;
 
-
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
 import static javax.persistence.GenerationType.AUTO;
 

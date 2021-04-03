@@ -1,5 +1,6 @@
 package jdev;
 
+import jdev.services.GPSCoord;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
@@ -12,7 +13,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 @SpringBootApplication
 @EnableJpaRepositories("jdev.dao")
-@EntityScan(basePackageClasses = jdev.dao.GPSCoord.class)
+@EntityScan(basePackageClasses = GPSCoord.class)
 @ComponentScan({"jdev.services","jdev.dao"})
 public class Main{
     public static void main (String[] args) throws Exception {
