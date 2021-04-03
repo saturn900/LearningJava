@@ -5,7 +5,7 @@ import javax.persistence.*;
 
 import static javax.persistence.GenerationType.AUTO;
 
-@Entity
+
 @Table(name="GPSCoord")
 public class GPSCoord {
 
@@ -71,7 +71,5 @@ public class GPSCoord {
     public void setModel4(String model4) {
         this.azimuth = azimuth;
     }
-
-
 
 }
