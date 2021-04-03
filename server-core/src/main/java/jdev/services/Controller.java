@@ -46,10 +46,7 @@ public class Controller {
         return new PropertySourcesPlaceholderConfigurer();
     }
 
-    @Bean
-    public GPSCoord gpsCoord(){
-        return  new GPSCoord();
-    }
+
 
     //можно добавить метод с аннотацией PostConstruct и в нем вывод в лог, чтобы проверить что данный контроллер инициализируется спрингом
 }
