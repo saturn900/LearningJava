@@ -8,7 +8,7 @@ import org.springframework.context.annotation.ComponentScan;
  * Created by Егор on 25.11.2017.
  */
 @SpringBootApplication
-@ComponentScan({"jdev.services"}) //  Начальная точка
+@ComponentScan({"jdev.services"})
 public class Main{
     public static void main(String[] args) {
         SpringApplication.run(Main.class, args);
