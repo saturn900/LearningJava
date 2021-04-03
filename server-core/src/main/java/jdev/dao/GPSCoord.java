@@ -9,6 +9,15 @@ import static javax.persistence.GenerationType.AUTO;
 @Table(name="GPSCoord")
 public class GPSCoord {
 
+
+
+    public GPSCoord(){
+
+    }
+
+
+
+
     @Id
     @GeneratedValue(strategy = AUTO)
     @Column(name = "ID")
